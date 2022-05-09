@@ -52,5 +52,5 @@ before-build = """\
   """
 
 [tool.cibuildwheel.windows.environment]
-LDFLAGS = "-LC:/Program Files/OGDF-PROJECT/include"
-CFLAGS = "-IC:/Program Files/OGDF-PROJECT/lib"
+LDFLAGS = "-L'C:/Program Files/OGDF-PROJECT/include'"
+CFLAGS = "-I'C:/Program Files/OGDF-PROJECT/lib'"
