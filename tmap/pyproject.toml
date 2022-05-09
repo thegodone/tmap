@@ -51,6 +51,6 @@ before-build = """\
   rmdir /Q /S build\
   """
 
-# [tool.cibuildwheel.windows.environment]
-# LDFLAGS = "-L\"C:/Program Files/OGDF-PROJECT/include\""
-# CFLAGS = "-I\"C:/Program Files/OGDF-PROJECT/lib\""
+[tool.cibuildwheel.windows.environment]
+LDFLAGS = "-LC:/ogdf"
+CFLAGS = "-IC:/ogdf"
