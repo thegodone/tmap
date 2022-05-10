@@ -24,6 +24,12 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
     include_directories(${OGDF_INCLUDE})
     link_directories(${OGDF_LIB})
+elseif(WIN32)
+    SET(OGDF_INCLUDE "C:/ogdf/include")
+    SET(OGDF_LIB "C:/ogdf/lib")
+
+    include_directories(${OGDF_INCLUDE})
+    link_directories(${OGDF_LIB})
 else()
     SET(OGDF_INCLUDE "/include")
     SET(OGDF_LIB "/lib")
