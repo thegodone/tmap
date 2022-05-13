@@ -1,6 +1,14 @@
-[tool.cibuildwheel]
-# build = ["cp37-*"]
+[project]
+name = "tmap"
+description = "A Python package for visualizing large, high-dimensional data sets."
+readme = "README.md"
+# keywords = ["one", "two"]
+# license = { text = "BSD 3-Clause License" }
+# classifiers = ["Framework :: Django", "Programming Language :: Python :: 3"]
+dependencies = ["attrs", 'matplotlib']
+dynamic = ["version"]
 
+[tool.cibuildwheel]
 # Skip 32-bit builds, musl build
 skip = ["*-win32", "*-manylinux_i686", "*-musllinux_*"]
 
@@ -10,7 +18,7 @@ before-build = """\
   cd ./ogdf-conda/src && \
   mkdir build && \
   cd build && \
-  cmake .. -DCMAKE_BUILD_TYPE=Release -DOGDF_MEMORY_MANAGER=MALLOC_TS -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_SHARED_LIBS=ON && \
+  cmake .. -DCMAKE_BUILD_TYPE=Debug -DOGDF_MEMORY_MANAGER=MALLOC_TS -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_SHARED_LIBS=ON && \
   make -j4 && \
   make install && \
   cd .. && \
